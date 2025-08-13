@@ -1,4 +1,4 @@
-export const locationChoices = async() => {
+export const LocationChoices = async() => {
     //Fetches locations from the API
     const response = await fetch("http://localhost:8088/socioLocations")
     const locations = await response.json()

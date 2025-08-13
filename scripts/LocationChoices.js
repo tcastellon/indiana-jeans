@@ -9,6 +9,9 @@ export const LocationChoices = async() => {
     `
 
     //TODO: Generate radio buttons and add to html
+    for (const location of locations) {
+        html += `<input type="radio" name="location" value="${location.id}" /> ${location.label}`
+    }
 
     html += `
         </div>

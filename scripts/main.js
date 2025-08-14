@@ -9,7 +9,7 @@ const render = async() => {
     const jeansHTML = JeanChoices()
     const locationsHTML = await LocationChoices()
     const buttonHTML = SubmissionButton()
-    const submissionListHTML = SubmissionList()
+    const submissionListHTML = await SubmissionList()
 
     container.innerHTML = `
     ${jeansHTML}

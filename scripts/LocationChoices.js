@@ -1,9 +1,9 @@
-import { setSocioLocation } from "./TransientState.js"
+import { setSocioLocationId } from "./TransientState.js"
 
 const handleLocationChange = (changeEvent) => {
     if(changeEvent.target.name === "location") {
         const locationId = parseInt(changeEvent.target.value)
-        setSocioLocation(locationId)
+        setSocioLocationId(locationId)
     }
 }
 

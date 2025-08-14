@@ -9,13 +9,24 @@ export const setOwnsBlueJeans = (chosenOwnership) => {
     transientState.ownsBlueJeans = chosenOwnership
 }
 
-export const setSocioLocation = (chosenLocation) => {
+export const setSocioLocationId = (chosenLocation) => {
     transientState.socioLocationId = chosenLocation
 }
 
 // Function to convert transient state to permanent state
-export const saveSurveySubmission = () => {
-    //Start building the POST request here
-    console.log("Saving survey to database...")
-    console.log(transientState)
+export const saveSurveySubmission = async() => {
+    if((transientState.ownsBlueJeans === true || transientState.ownsBlueJeans === false) && transientState.socioLocationId > 0) {
+        //Create the options for fetch()
+        const postOptions = {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(transientState)
+        }
+        //Send the data to the API
+        const response = await fetch("http://localhost:8088/submissions", postOptions)
+    } else {
+        window.alert("Please complete the form!")
+    }
 }

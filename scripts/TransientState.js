@@ -12,3 +12,10 @@ export const setOwnsBlueJeans = (chosenOwnership) => {
 export const setSocioLocation = (chosenLocation) => {
     transientState.socioLocationId = chosenLocation
 }
+
+// Function to convert transient state to permanent state
+export const saveSurveySubmission = () => {
+    //Start building the POST request here
+    console.log("Saving survey to database...")
+    console.log(transientState)
+}
